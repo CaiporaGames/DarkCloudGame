@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2622a5db69872294aadb02e8bdc47a29, type: 3}
+  m_Name: Level Parameters
+  m_EditorClassIdentifier: 
+  cellColor:
+  - {r: 0.19530316, g: 0.8773585, b: 0.037246335, a: 1}
+  - {r: 0.41739094, g: 0.8301887, b: 0.11356357, a: 1}
+  - {r: 0.059407253, g: 0.08153203, b: 0.8396226, a: 1}
