@@ -29,6 +29,11 @@ namespace DarkCloudGame
         public float[,] GridArrayValues { get { return gridArrayValues; } }
         public Vector3[,] GridWorldPositions { get { return gridWorldPositions; } }
 
+        public Vector3 GridOriginPosition { get { return gridOriginPosition; } }
+
+        public int Width { get { return width; } }
+        public int Height { get { return height; } }
+
         Vector3[,] CreateGridWorldPositions()
         {
 
