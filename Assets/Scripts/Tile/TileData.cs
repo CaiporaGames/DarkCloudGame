@@ -20,7 +20,7 @@ namespace DarkCloudGame
 
         private void Start()
         {
-            if (tileValue == 3)
+            if (tileValue == 3 || tileValue == 2)
             {
                 _collider = GetComponent<Collider2D>();
                 spriteRenderer = GetComponent<SpriteRenderer>();

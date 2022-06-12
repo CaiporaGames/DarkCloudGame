@@ -8,6 +8,7 @@ namespace DarkCloudGame
     {
         [SerializeField] GameObject enemyPrefab;
         [SerializeField] SOLevelParameters levelParameters;
+        [SerializeField] int enemyAmount = 5;
 
         private void OnEnable()
         {
@@ -17,7 +18,7 @@ namespace DarkCloudGame
         void SpawnEnemies()
         {
             int x, y;
-            for (int j = 0; j < 5; j++)
+            for (int j = 0; j < enemyAmount; j++)
             {
                 x = Random.Range(Mathf.FloorToInt(levelParameters.grid.Width * 0.5f), Mathf.FloorToInt(levelParameters.grid.Width));
                 y = Random.Range(Mathf.FloorToInt(levelParameters.grid.Height * 0.5f), Mathf.FloorToInt(levelParameters.grid.Height));

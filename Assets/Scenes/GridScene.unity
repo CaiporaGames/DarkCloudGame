@@ -691,6 +691,7 @@ GameObject:
   - component: {fileID: 1209035302}
   - component: {fileID: 1209035301}
   - component: {fileID: 1209035303}
+  - component: {fileID: 1209035304}
   m_Layer: 0
   m_Name: --GameManagers--
   m_TagString: Untagged
@@ -745,6 +746,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 7388903968555522856, guid: b9e156872c84060478ed773f93cf821c, type: 3}
   levelParameters: {fileID: 11400000, guid: 231234efce8b6a64e90fd3625577ea5f, type: 2}
+  enemyAmount: 50
+--- !u!114 &1209035304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209035300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ac371cd6a0a514d9debaf4c621c170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1783356250
 GameObject:
   m_ObjectHideFlags: 0
