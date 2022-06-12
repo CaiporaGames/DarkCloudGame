@@ -1,0 +1,13 @@
+##### BUGS #####
+
+-- We have a problem on the movementation when the grid start position is at (0,0,0), in the line y = 3 when we press the left/right
+movement the player goes diagonaly. The right movementation is go horizontaly.
+To avoid this problem for now we are starting the grid from the position (0,3,0)
+
+-- Animation is moving the player diagonaly. 
+
+
+##### IMPROVEMENTS #####
+
+-- Create lerp function to move the player from one square to another.
+-- Make a button to the player press and if the sword hit the enemy attack it will be defended.

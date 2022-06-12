@@ -31,6 +31,7 @@ namespace DarkCloudGame
 
         public Vector3 GridOriginPosition { get { return gridOriginPosition; } }
 
+
         public int Width { get { return width; } }
         public int Height { get { return height; } }
 
@@ -53,7 +54,7 @@ namespace DarkCloudGame
             return new Vector3(x, y) * cellSize + gridOriginPosition;
         }
 
-        void GetXY(Vector3 worldPosition, out int x, out int y)
+        public void GetXY(Vector3 worldPosition, out int x, out int y)
         {
             x = Mathf.FloorToInt((worldPosition - gridOriginPosition).x / cellSize);
             y = Mathf.FloorToInt((worldPosition - gridOriginPosition).y / cellSize);

@@ -124,5 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e1e6902a78ce2a4bbcc1f9892e508b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileWorldPosition: {x: 0, y: 0, z: 0}
-  tileValue: 0
+  playerStats: {fileID: 11400000, guid: af005f5b659e7654ebc6ae3e4c38f404, type: 2}
+  levelParameters: {fileID: 11400000, guid: 231234efce8b6a64e90fd3625577ea5f, type: 2}

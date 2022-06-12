@@ -33,9 +33,8 @@ namespace DarkCloudGame
 
                     TileData tileData = spriteInstance.GetComponent<TileData>();
 
-                   
-                    SetGridValues(i, j);
-                    SetTileValue(tileData, i, j);
+
+                    SetGridValues(tileData, i, j);
                     SetCellColor(spriteInstance, i, j);
                 }
             }
@@ -50,26 +49,42 @@ namespace DarkCloudGame
         }
 
        
-        void SetGridValues(int i, int j)
+        void SetGridValues(TileData tileData, int i, int j)
         {
             float randomChance = Random.value;
+
+            SetGridDefaultValue(tileData, i, j);
+
 
             if (randomChance < 0.1f)
             {
                 levelParameters.grid.GridArrayValues[i, j] = 2;
+                tileData.HasAnotherElement = true;
             }
             else if(randomChance >= 0.1f && randomChance < 0.15f)
             {
                 levelParameters.grid.GridArrayValues[i, j] = 3;
+                tileData.HasAnotherElement = true;
+
             }
-            else if ((j + i) % 2 == 0)
+
+            SetTileValue(tileData, i, j);
+
+        }
+
+        void SetGridDefaultValue(TileData tileData, int i, int j)
+        {
+            if ((j + i) % 2 == 0)
             {
                 levelParameters.grid.GridArrayValues[i, j] = 0;
+                
             }
             else
             {
                 levelParameters.grid.GridArrayValues[i, j] = 1;
             }
+
+            tileData.TileDefaultGroundValue = levelParameters.gridArrayValues[i, j];
 
         }
 
