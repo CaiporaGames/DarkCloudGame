@@ -11,7 +11,7 @@ namespace DarkCloudGame
 
         public void DiceValue()
         {
-            diceValue = Random.Range(0, 4);
+            diceValue = Random.Range(0, 7);
         }
     }
 }

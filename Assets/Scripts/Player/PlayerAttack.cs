@@ -6,17 +6,21 @@ namespace DarkCloudGame
 {
     public class PlayerAttack : MonoBehaviour
     {
-        [SerializeField] GameObject attackPrefab;
+        [SerializeField] SOPlayerStats playerStats;
 
-        void Start()
-        {
-        
-        }
 
-        // Update is called once per frame
-        void Update()
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-        
+            if (collision.CompareTag("Obstacle"))
+            {
+                gameObject.SetActive(false);
+            }
+            else if (collision.CompareTag("Enemy"))
+            {
+                collision.GetComponent<EnemyHealth>().GetDamage(playerStats.playerAttack);
+                gameObject.SetActive(false);
+
+            }
         }
     }
 }

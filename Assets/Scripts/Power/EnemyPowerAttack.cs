@@ -31,6 +31,10 @@ namespace DarkCloudGame
                 playerStats.SetupPlayerHealth((int)enemyStats.enemyAttack);
                 gameObject.SetActive(false);
             }
+            else if (collision.CompareTag("Obstacle"))
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         private IEnumerator Timer()

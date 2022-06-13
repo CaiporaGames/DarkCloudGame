@@ -6,16 +6,22 @@ namespace DarkCloudGame
 {
     public class PlayerSelectAttackPoint : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        [SerializeField] GameObject targetImagePrefab;
+        [SerializeField] Camera _camera;
+        Vector3 mousePosition;
 
-        // Update is called once per frame
+        public delegate void OnPlayerSelectAttackPoint(Vector3 targetPosition);
+        public static OnPlayerSelectAttackPoint playerSelectAttackPoint;
+       
         void Update()
         {
-        
+            if (Input.GetMouseButtonDown(1))
+            {                
+                targetImagePrefab.SetActive(true);
+                mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+                targetImagePrefab.transform.position = new Vector3(mousePosition.x, mousePosition.y);
+                playerSelectAttackPoint?.Invoke(targetImagePrefab.transform.position);
+            }
         }
     }
 }

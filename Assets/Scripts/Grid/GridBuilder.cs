@@ -60,6 +60,7 @@ namespace DarkCloudGame
             {
                 levelParameters.grid.GridArrayValues[i, j] = 2;
                 tileData.HasAnotherElement = true;
+                tileData.tag = "Obstacle";
             }
             else if(randomChance >= 0.1f && randomChance < 0.15f)
             {

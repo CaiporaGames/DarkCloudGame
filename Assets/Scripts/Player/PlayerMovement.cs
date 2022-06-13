@@ -10,6 +10,9 @@ namespace DarkCloudGame
         [SerializeField] Animator animator;
 
 
+        public delegate void PlayerValidMovement();
+        public static PlayerValidMovement playerValidMovement;
+
         Vector3 playerPosition;
         int x, y;
         int walkID;
@@ -32,10 +35,11 @@ namespace DarkCloudGame
                // animator.SetTrigger(walkID);
                 VerifyGridObstaclePosition();
 
-                if (levelParameters.gridArrayValues[x,y + 1] == 2)
+                if (levelParameters.gridArrayValues[x,y + 1] == 2 || GameController.Instance.PlayerMovements <= 0)
                 {
                     return;
                 }
+                playerValidMovement?.Invoke();
                 playerPosition = transform.position;
                 transform.position = new Vector3(Mathf.FloorToInt(playerPosition.x), Mathf.FloorToInt(playerPosition.y + 1));
             }
@@ -44,10 +48,11 @@ namespace DarkCloudGame
                 VerifyGridObstaclePosition();
                 //animator.SetTrigger(walkID);
 
-                if (levelParameters.gridArrayValues[x, y - 1] == 2)
+                if (levelParameters.gridArrayValues[x, y - 1] == 2 || GameController.Instance.PlayerMovements <= 0)
                 {
                     return;
                 }
+                playerValidMovement?.Invoke();
                 playerPosition = transform.position;
                 transform.position = new Vector3(Mathf.FloorToInt(playerPosition.x), Mathf.FloorToInt(playerPosition.y - 1));
             }
@@ -56,10 +61,11 @@ namespace DarkCloudGame
                 VerifyGridObstaclePosition();
                // animator.SetTrigger(walkID);
 
-                if (levelParameters.gridArrayValues[x + 1, y] == 2)
+                if (levelParameters.gridArrayValues[x + 1, y] == 2 || GameController.Instance.PlayerMovements <= 0)
                 {
                     return;
                 }
+                playerValidMovement?.Invoke();
                 playerPosition = transform.position;
                 transform.position = new Vector3(Mathf.FloorToInt(playerPosition.x + 1), Mathf.FloorToInt(playerPosition.y));
             }
@@ -68,10 +74,11 @@ namespace DarkCloudGame
                 VerifyGridObstaclePosition();
                // animator.SetTrigger(walkID);
 
-                if (levelParameters.gridArrayValues[x - 1, y] == 2)
+                if (levelParameters.gridArrayValues[x - 1, y] == 2 || GameController.Instance.PlayerMovements <= 0)
                 {
                     return;
                 }
+                playerValidMovement?.Invoke();
                 playerPosition = transform.position;
                 transform.position = new Vector3(Mathf.FloorToInt(playerPosition.x - 1), Mathf.FloorToInt(playerPosition.y));
             }
