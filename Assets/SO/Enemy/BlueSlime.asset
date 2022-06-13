@@ -15,3 +15,5 @@ MonoBehaviour:
   enemyName: Blue
   enemyHealth: 15
   enemyAttack: 3
+  enemyType: 1
+  runtimeAnimator: {fileID: 9100000, guid: 10adc3c048a16394094e91864480c0da, type: 2}

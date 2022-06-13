@@ -15,3 +15,5 @@ MonoBehaviour:
   enemyName: Red
   enemyHealth: 20
   enemyAttack: 4
+  enemyType: 2
+  runtimeAnimator: {fileID: 9100000, guid: 74a9d3c091458d140bb3c93d80a8e767, type: 2}

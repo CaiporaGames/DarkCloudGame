@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 8
   m_Sprite: {fileID: 1025474642, guid: a7f5f34dbc0e98d499c2449a1ecb8f37, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -116,8 +116,11 @@ GameObject:
   - component: {fileID: 7388903968555522857}
   - component: {fileID: 7388903968555522854}
   - component: {fileID: 5873080951175744457}
+  - component: {fileID: -8054409294609700975}
+  - component: {fileID: -2872867081856754680}
+  - component: {fileID: -6025793091255080447}
   m_Layer: 3
-  m_Name: Slime
+  m_Name: SlimeGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,3 +174,44 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   levelParameters: {fileID: 11400000, guid: 231234efce8b6a64e90fd3625577ea5f, type: 2}
+--- !u!114 &-8054409294609700975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7388903968555522856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe2be477618adb4091e0fc4b5162968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: dcb041c6e539ca6408d62b74321ad88d, type: 2}
+  animator: {fileID: 7388903967364472800}
+--- !u!114 &-2872867081856754680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7388903968555522856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e205e6e1a788ac4d8a7609bb9ad7c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: dcb041c6e539ca6408d62b74321ad88d, type: 2}
+  dieEffect: {fileID: 2508400003030982105, guid: ebacfaad6c3f78044abccedd13be9084, type: 3}
+--- !u!114 &-6025793091255080447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7388903968555522856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 207c88aa11ac9374a9f54c8b21797463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: dcb041c6e539ca6408d62b74321ad88d, type: 2}

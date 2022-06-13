@@ -10,6 +10,7 @@ namespace DarkCloudGame
         public string enemyName;
         public float enemyHealth;
         public float enemyAttack;
-        public Animator enemyAnimator;
+        public int enemyType;
+        public RuntimeAnimatorController runtimeAnimator;
     }
 }

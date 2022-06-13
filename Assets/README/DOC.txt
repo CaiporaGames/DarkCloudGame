@@ -11,3 +11,4 @@ To avoid this problem for now we are starting the grid from the position (0,3,0)
 
 -- Create lerp function to move the player from one square to another.
 -- Make a button to the player press and if the sword hit the enemy attack it will be defended.
+-- Make the enemies spawn more dynamics based on the player progression. Now is just based on problabilities

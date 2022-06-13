@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DarkCloudGame
 {
-    public class GameController : MonoBehaviour
+    public class PlayerSelectAttackPoint : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()
