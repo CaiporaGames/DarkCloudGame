@@ -13,12 +13,13 @@ namespace DarkCloudGame
         public float playerAttack;
         public float maxHealth = 100f;
 
-        public delegate void SetupPlayerHealthDelegate();
-        public SetupPlayerHealthDelegate setupPlayerHealthDelegate;
 
-        public float SetupPlayerHealth(int value)
+        public delegate void SetupPlayerHealthDelegate();
+        public static SetupPlayerHealthDelegate setupPlayerHealthDelegate;
+
+        public float SetupPlayerHealth(float value)
         {
-            if (playerHealth >= maxHealth || playerHealth <= 0)
+            if (playerHealth > maxHealth || playerHealth < 0)
             {
                 return playerHealth;
             }

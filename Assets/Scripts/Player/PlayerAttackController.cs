@@ -7,8 +7,9 @@ namespace DarkCloudGame
     public class PlayerAttackController : MonoBehaviour
     {
         [SerializeField] GameObject attackPrefabEffect;
+
         Vector3 attackDirection;
-        float perc = 0, time = 0, maxTime = 3;
+        float perc = 0, time = 0, maxTime = 4;
 
 
         private void OnEnable()
@@ -18,8 +19,8 @@ namespace DarkCloudGame
 
 
         public void AttackButton()
-        {
-            GameController.Instance.CanPlayerAttack = false;
+        {           
+            GameTurnController.Instance.CanPlayerAttack = false;
             StartCoroutine(Timer());
         }
 
@@ -42,6 +43,7 @@ namespace DarkCloudGame
             }
 
             attackPrefabEffect.SetActive(false);
+            attackPrefabEffect.transform.position = transform.position;
             time = 0;
             perc = 0;
         }

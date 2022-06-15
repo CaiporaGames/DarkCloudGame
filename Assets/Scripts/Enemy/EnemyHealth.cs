@@ -27,10 +27,12 @@ namespace DarkCloudGame
                 Die();
                 Destroy(gameObject, 3);
             }
-        }       
+        }
+               
 
         void Die()
         {
+            SEnemiesHolder.Instance.RemoveEnemieFromEnemiesList(gameObject);
             GameObject go = Instantiate(dieEffect, transform.position, Quaternion.identity);
             Destroy(go,2);
             _collider.enabled = false;

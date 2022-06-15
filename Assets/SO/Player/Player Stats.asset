@@ -16,3 +16,4 @@ MonoBehaviour:
   playerHealth: 100
   playerAttack: 5
   maxHealth: 100
+  gameStats: {fileID: 11400000, guid: 0d25a7d80ac7431488a89edcbb35ac7a, type: 2}

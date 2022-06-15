@@ -11,18 +11,18 @@ namespace DarkCloudGame
 
         private void OnEnable()
         {
-            PlayerMovement.playerValidMovement += MovesTextUpdate;
+            GameTurnController.reducePlayerMovementsCount += MovesTextUpdate;
         }
 
         void MovesTextUpdate()
         {
-            playerMovesCount.text = GameController.Instance.PlayerMovements.ToString();
+            playerMovesCount.text = GameTurnController.Instance.PlayerMovements.ToString();
         }
 
 
         private void OnDisable()
         {
-            PlayerMovement.playerValidMovement += MovesTextUpdate;
+            GameTurnController.reducePlayerMovementsCount -= MovesTextUpdate;
         }
     }
 }

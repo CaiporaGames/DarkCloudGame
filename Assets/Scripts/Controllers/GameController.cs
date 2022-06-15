@@ -1,102 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 namespace DarkCloudGame
 {
     public class GameController : MonoBehaviour
     {
-
-        [SerializeField] GameObject messagePanel;
-        [SerializeField] Button playerAttackButton;
-
-
-        bool canPlayerAttack = false;
-        Color buttonColor;
-        int playerMovements = 0;
-
-        public static GameController _instance;
-        public static GameController Instance { get { return _instance; } }
-        public bool CanPlayerAttack { get { return canPlayerAttack; } set { canPlayerAttack = value; } }
-        public int PlayerMovements { get { return playerMovements; } }
-
-        private void Awake()
-        {
-            if (_instance != this && _instance != null)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                _instance = this;
-            }
-        }
+        [SerializeField] GameObject gameOverCanvas;
+        [SerializeField] GameObject winCanvas;
+        [SerializeField] SOGameStats gameStats;
 
         private void OnEnable()
         {
-            PlayerMovement.playerValidMovement += ReducePlayerMovements;
+            SOPlayerStats.setupPlayerHealthDelegate += OpenGameOverCanvas;
+            SEnemiesHolder.allEnemiesAreDead += OpenWinCanvas;
         }
 
-
-        private void Start()
+        void OpenWinCanvas()
         {
-            canPlayerAttack = true;
-            buttonColor = playerAttackButton.GetComponent<Image>().color;
-            playerMovements = Random.Range(0, 7);
-            PlayerMovement.playerValidMovement?.Invoke();
+            winCanvas.SetActive(true);
+            gameStats.isGamePaused = true;
+           
         }
 
 
-        private void Update()
+        void OpenGameOverCanvas()
         {
-            Debug.Log(playerMovements);
-            ControlGameTurn();
+            gameOverCanvas.SetActive(true);
+            gameStats.isGamePaused = true;
+
         }
 
-
-        void ControlGameTurn()
+        public void StartGameAgain()
         {
-            if (canPlayerAttack)
-            {
-                messagePanel.SetActive(true);
-                playerAttackButton.interactable = true;
-                buttonColor = new Vector4(1,1,1,1);
+            gameStats.isGamePaused = false;
+            SceneManager.LoadScene(0);
 
-            }
-            else
-            {
-                SelectEnemyToAttackPlayer();
-                messagePanel.SetActive(false);
-                playerAttackButton.interactable = false;
-                buttonColor = new Vector4(1, 1, 1, 0.5f);
-            }
-        }
-        
-
-        void SelectEnemyToAttackPlayer()
-        {
-            //Select enemy
-
-            //call the attack method from the enemy
         }
 
-        public void Dice()
-        {
-            PlayerMovement.playerValidMovement?.Invoke();
-            canPlayerAttack = false;
-            playerMovements = Random.Range(0,7);
-        }
-
-        void ReducePlayerMovements()
-        {
-            playerMovements--;
-        }
 
         private void OnDisable()
         {
-            PlayerMovement.playerValidMovement -= ReducePlayerMovements;
+            SOPlayerStats.setupPlayerHealthDelegate -= OpenGameOverCanvas;
+            SEnemiesHolder.allEnemiesAreDead -= OpenWinCanvas;
         }
     }
 }

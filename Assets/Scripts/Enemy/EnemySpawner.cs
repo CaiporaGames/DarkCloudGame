@@ -8,7 +8,6 @@ namespace DarkCloudGame
     {
         [SerializeField] GameObject[] enemyPrefab;
         [SerializeField] SOLevelParameters levelParameters;
-        [SerializeField] int enemyAmount = 5;
 
         int randEnemyAmount, halthEnemyAmount, thirdEnemyAmount;
 
@@ -25,52 +24,32 @@ namespace DarkCloudGame
             halthEnemyAmount = Mathf.RoundToInt(randEnemyAmount * 0.5f);
             thirdEnemyAmount = Mathf.RoundToInt(randEnemyAmount * 0.3f);
 
+            SetupEnemies(halthEnemyAmount, 0);
+            SetupEnemies(thirdEnemyAmount, 1);
+            SetupEnemies(randEnemyAmount - halthEnemyAmount - thirdEnemyAmount, 2);          
+
+        }
+
+        void SetupEnemies(int enemyAmount, int enemyIndexOnEnemyPrefabArray)
+        {
             int x, y;
-            for (int j = 0; j < halthEnemyAmount; j++)
-            {
-                x = Random.Range(Mathf.FloorToInt(levelParameters.grid.Width * 0.5f), Mathf.FloorToInt(levelParameters.grid.Width));
-                y = Random.Range(Mathf.FloorToInt(levelParameters.grid.Height * 0.5f), Mathf.FloorToInt(levelParameters.grid.Height));
 
-                if (levelParameters.grid.GridArrayValues[x,y] == 0 || levelParameters.grid.GridArrayValues[x, y] == 1)
-                {
-                    GameObject enemyGO = Instantiate(enemyPrefab[0], levelParameters.grid.GridWorldPositions[x, y] , Quaternion.identity);
-                }
-                else
-                {
-                    j--;
-                }
-            }
-
-            for (int j = 0; j < thirdEnemyAmount; j++)
+            for (int j = 0; j < enemyAmount; j++)
             {
                 x = Random.Range(Mathf.FloorToInt(levelParameters.grid.Width * 0.5f), Mathf.FloorToInt(levelParameters.grid.Width));
                 y = Random.Range(Mathf.FloorToInt(levelParameters.grid.Height * 0.5f), Mathf.FloorToInt(levelParameters.grid.Height));
 
                 if (levelParameters.grid.GridArrayValues[x, y] == 0 || levelParameters.grid.GridArrayValues[x, y] == 1)
                 {
-                    GameObject enemyGO = Instantiate(enemyPrefab[1], levelParameters.grid.GridWorldPositions[x, y], Quaternion.identity);
+                    GameObject enemyGO = Instantiate(enemyPrefab[enemyIndexOnEnemyPrefabArray], levelParameters.grid.GridWorldPositions[x, y], Quaternion.identity);
+                    SEnemiesHolder.Instance.Enemies.Add(enemyGO);
+
                 }
                 else
                 {
                     j--;
                 }
             }
-
-            for (int j = 0; j < halthEnemyAmount - thirdEnemyAmount; j++)
-            {
-                x = Random.Range(Mathf.FloorToInt(levelParameters.grid.Width * 0.5f), Mathf.FloorToInt(levelParameters.grid.Width));
-                y = Random.Range(Mathf.FloorToInt(levelParameters.grid.Height * 0.5f), Mathf.FloorToInt(levelParameters.grid.Height));
-
-                if (levelParameters.grid.GridArrayValues[x, y] == 0 || levelParameters.grid.GridArrayValues[x, y] == 1)
-                {
-                    GameObject enemyGO = Instantiate(enemyPrefab[2], levelParameters.grid.GridWorldPositions[x, y], Quaternion.identity);
-                }
-                else
-                {
-                    j--;
-                }
-            }
-
         }
 
 

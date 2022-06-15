@@ -12,7 +12,7 @@ namespace DarkCloudGame
 
         private void OnEnable()
         {
-            playerStats.setupPlayerHealthDelegate += PlayerHealthText;
+            SOPlayerStats.setupPlayerHealthDelegate += PlayerHealthText;
         }
 
         private void Start()
@@ -28,7 +28,7 @@ namespace DarkCloudGame
 
         private void OnDisable()
         {
-            playerStats.setupPlayerHealthDelegate -= PlayerHealthText;
+            SOPlayerStats.setupPlayerHealthDelegate -= PlayerHealthText;
         }
 
     }
