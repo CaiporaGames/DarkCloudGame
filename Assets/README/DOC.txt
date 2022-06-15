@@ -22,6 +22,7 @@ who has the better vision of the player. Now is just randomly.
 -- Create game progression.
 -- Grid custom creation.
 -- Tile colors should be change by corresponding sprites. For example: green should be medicine, gray should be wall
+-- Create a save button. Now is saving when we press T keyboard
 
 ##### class naming convention ######
 
