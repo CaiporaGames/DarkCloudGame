@@ -8,6 +8,7 @@ namespace DarkCloudGame
     {
         [SerializeField] LayerMask slimeMask;
         [SerializeField] SOLevelParameters levelParameters;
+        [SerializeField] SOGameStats gameStats;
         float perc = 0;
         float time = 0;
         float maxTime = 0.5f;
@@ -23,6 +24,10 @@ namespace DarkCloudGame
         void EnemyMove()
         {
             StartCoroutine(Timer());
+            if (gameStats.isGamePaused)
+            {
+                return;
+            }
             if (Random.value < 0.05f)
             {
                 direction = Random.Range(0,2);

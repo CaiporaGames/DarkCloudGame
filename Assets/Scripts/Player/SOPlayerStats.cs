@@ -19,14 +19,23 @@ namespace DarkCloudGame
 
         public float SetupPlayerHealth(float value)
         {
-            if (playerHealth > maxHealth || playerHealth < 0)
+            playerHealth -= value;
+
+            if (playerHealth > maxHealth)
             {
+                playerHealth = 100;
+                setupPlayerHealthDelegate?.Invoke();
+                return playerHealth;
+
+            }
+            else if (playerHealth < 0)
+            {
+                playerHealth = 0;
+                setupPlayerHealthDelegate?.Invoke();
                 return playerHealth;
             }
 
-            playerHealth += value;
             setupPlayerHealthDelegate?.Invoke();
-
             return playerHealth;
         }
     }

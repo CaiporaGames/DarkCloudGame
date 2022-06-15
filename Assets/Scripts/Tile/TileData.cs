@@ -38,7 +38,7 @@ namespace DarkCloudGame
         {
             if (tileValue == 3 && playerStats.playerHealth < playerStats.maxHealth)
             {
-                playerStats.playerHealth = playerStats.SetupPlayerHealth(10);
+                playerStats.playerHealth = playerStats.SetupPlayerHealth(-10);
                 spriteRenderer.color = levelParameters.cellColor[(int)tileDefaultGroundValue];
                 _collider.enabled = false;
             }

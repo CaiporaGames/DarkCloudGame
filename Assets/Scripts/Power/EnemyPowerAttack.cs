@@ -8,8 +8,7 @@ namespace DarkCloudGame
     {
         [SerializeField] SOPlayerStats playerStats;
         [SerializeField] SOEnemyStats enemyStats;
-        [SerializeField] float speed = 0.01f;
-        [SerializeField] SOGameStats gameStats;
+        [SerializeField] float speed = 0.03f;
 
         Vector3 direction;
         float perc = 0, time = 0, maxTime = 4;
@@ -27,10 +26,10 @@ namespace DarkCloudGame
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player") && !gameStats.isGamePaused)
+            Debug.Log(collision.gameObject.name);
+            if (collision.CompareTag("Player"))
             {
-                
-                Debug.Log(playerStats.SetupPlayerHealth(-enemyStats.enemyAttack));
+                playerStats.SetupPlayerHealth(enemyStats.enemyAttack);
                 gameObject.SetActive(false);
             }
             else if (collision.CompareTag("Obstacle"))
