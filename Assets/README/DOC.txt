@@ -15,3 +15,23 @@ To avoid this problem for now we are starting the grid from the position (0,3,0)
 -- Create a better logic to select the enemies to attack the player, maybe choose the most close or
 who has the better vision of the player. Now is just randomly.
 -- Create a dependency injection architecture
+-- Concentrate the save system in a single place. Now is all over the place.
+-- Make a better Audio System.
+-- Make the enemies death count
+-- Player level count
+-- Create game progression.
+-- Grid custom creation.
+-- Tile colors should be change by corresponding sprites. For example: green should be medicine, gray should be wall
+
+##### class naming convention ######
+
+-- The scripts that start with S are Singletons to hold some gameobjects information
+-- The scripts that start with SO are Scriptable Objects to hold game data
+
+
+###### My Words ######
+
+
+--Personally i never create a grid game nor a turn based game, that said, the game is still very young
+and i do not have time to think in a better architecture for a such type of game. 
+In general was very good practice!

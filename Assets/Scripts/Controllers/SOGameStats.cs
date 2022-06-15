@@ -8,5 +8,6 @@ namespace DarkCloudGame
     public class SOGameStats : ScriptableObject
     {
         public bool isGamePaused = false;
+        public int playerMoves;//It should be inside the SOPlayerStats
     }
 }

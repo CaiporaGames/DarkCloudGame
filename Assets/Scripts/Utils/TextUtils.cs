@@ -10,6 +10,7 @@ namespace DarkCloudGame
     {
         public static TextMeshPro CreateText(Transform parent, string _text = "", int fontSize = 40, Color? fontColor = null, int sortingOrder = 1)
         {
+            //Just created to see some values in the game. It is not used on the game itself in this game development level.
             if (fontColor == null)
             {
                 fontColor = Color.white;

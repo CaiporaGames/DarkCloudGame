@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DarkCloudGame
 {
-    public class SEnemyPowersHolder : MonoBehaviour
+    public class SEnemyPowersHolder : MonoBehaviour//Holds the enemies powers array for future reference.
     {
         [SerializeField] GameObject[] enemyPowersPrefab;
 

@@ -5,7 +5,7 @@ using TMPro;
 
 namespace DarkCloudGame
 {
-    public class PlayerMovesCount : MonoBehaviour
+    public class PlayerMovesCount : MonoBehaviour//This is for the UI and should be called PlayerMovementUI
     {
         [SerializeField] TextMeshProUGUI playerMovesCount;
 

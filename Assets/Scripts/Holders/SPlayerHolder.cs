@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DarkCloudGame
 {
-    public class SPlayerHolder : MonoBehaviour
+    public class SPlayerHolder : MonoBehaviour//Holds the player gameobject for future reference
     {
         [SerializeField] GameObject player;
 

@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Player Stats
   m_EditorClassIdentifier: 
   playerName: Red Knight
-  playerHealth: 94
+  playerHealth: 100
   playerAttack: 5
   maxHealth: 100
+  JSONUtils: {fileID: 11400000, guid: 9a50d7252ab08b44180a0f37a9f8c24c, type: 2}
+  playerClips:
+  - {fileID: 11400000, guid: 67ca2fea840b2f04bb41cc34e4393751, type: 2}
+  - {fileID: 11400000, guid: bb2b7639d7f261845860bbeb36ba0ba0, type: 2}

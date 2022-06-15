@@ -18,13 +18,13 @@ namespace DarkCloudGame
         }
 
 
-        public void AttackButton()
+        public void AttackButton()//This is the button that the player press on screen
         {           
             GameTurnController.Instance.CanPlayerAttack = false;
             StartCoroutine(Timer());
         }
 
-        void Attack(Vector3 targetPosition)
+        void Attack(Vector3 targetPosition)//Player select point on grid
         {
             attackPrefabEffect.transform.position = transform.position;
             attackDirection =  targetPosition - transform.position;

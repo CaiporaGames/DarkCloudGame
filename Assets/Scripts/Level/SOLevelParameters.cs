@@ -5,7 +5,7 @@ using UnityEngine;
 namespace DarkCloudGame
 {
     [CreateAssetMenu(menuName = "Scriptable Objects / Level Parameters", fileName = "Level Parameters")]
-    public class SOLevelParameters : ScriptableObject
+    public class SOLevelParameters : ScriptableObject//Should have more variables when the game get more robust
     {
         public Color[] cellColor;
         public float[,] gridArrayValues;

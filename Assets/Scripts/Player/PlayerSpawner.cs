@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DarkCloudGame
 {
-    public class PlayerSpawner : MonoBehaviour
+    public class PlayerSpawner : MonoBehaviour// Controles where the enemies can spawn
     {
         [SerializeField] SOLevelParameters levelParameters;
 

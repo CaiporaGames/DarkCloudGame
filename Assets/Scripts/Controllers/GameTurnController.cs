@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 
 namespace DarkCloudGame
-{
+{//The most big script. It is doing some UI too, it should be put in another UI class.
+    //It is responsable for setup the turns time
     public class GameTurnController : MonoBehaviour
     {
 
         [SerializeField] GameObject messageCanvas;
         [SerializeField] GameObject diceButtonGO;
         [SerializeField] Button playerAttackButton;
-
+        [SerializeField] SOGameStats gameStats;
+        [SerializeField] SOPlayerStats playerStats;
+        [SerializeField] SOJSONUtiles JSONUtils;
 
         bool canPlayerAttack = false;
         bool runOnce = true;
@@ -51,7 +54,7 @@ namespace DarkCloudGame
             attackButtonColor = playerAttackButton.GetComponent<Image>().color;
             diceButtonColor = diceButtonGO.GetComponent<RawImage>().color;
             diceButton = diceButtonGO.GetComponent<Button>();
-            playerMovements = Random.Range(0, 7);
+            playerMovements = JSONUtils.LoadGameData().playerMoves;
             reducePlayerMovementsCount?.Invoke();
         }
 
@@ -59,6 +62,10 @@ namespace DarkCloudGame
         private void Update()
         {
             ControlGameTurn();
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                JSONUtils.SaveGameData(playerStats.playerHealth, gameStats.playerMoves);
+            }
         }
 
 
@@ -121,6 +128,7 @@ namespace DarkCloudGame
             canPlayerAttack = false;
             playerMovements = Random.Range(0,7);
             reducePlayerMovementsCount?.Invoke();
+            gameStats.playerMoves = playerMovements;
 
         }
 
@@ -131,6 +139,7 @@ namespace DarkCloudGame
                 return;
             }
             playerMovements--;
+            gameStats.playerMoves = playerMovements;
             reducePlayerMovementsCount?.Invoke();
         }       
     }

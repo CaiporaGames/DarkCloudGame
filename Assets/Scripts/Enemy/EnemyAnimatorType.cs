@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DarkCloudGame
 {
-    public class EnemyAnimatorType : MonoBehaviour
+    public class EnemyAnimatorType : MonoBehaviour//Used to change the enemies animator at runtime
     {
         [SerializeField] SOEnemyStats enemyStats;
         [SerializeField] Animator animator;

@@ -12,7 +12,9 @@ namespace DarkCloudGame
 
         Vector3 direction;
         float perc = 0, time = 0, maxTime = 4;
-       
+
+        public delegate void PlayerGetHurt();//This is to tell when the player was hit
+        public static PlayerGetHurt playerGetHurt;
 
         private void OnEnable()
         {
@@ -26,9 +28,9 @@ namespace DarkCloudGame
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log(collision.gameObject.name);
             if (collision.CompareTag("Player"))
             {
+                playerGetHurt?.Invoke();
                 playerStats.SetupPlayerHealth(enemyStats.enemyAttack);
                 gameObject.SetActive(false);
             }
@@ -40,7 +42,6 @@ namespace DarkCloudGame
 
         private IEnumerator Timer()
         {
-
             while (perc < 1)
             {
                 yield return null;
@@ -50,7 +51,6 @@ namespace DarkCloudGame
             gameObject.SetActive(false);
             time = 0;
             perc = 0;
-
         }
     }
 }

@@ -4,14 +4,15 @@ using UnityEngine;
 namespace DarkCloudGame
 {
     [CreateAssetMenu(menuName = "Scriptable Objects / JSON Utils", fileName = "JSON Utils")]
-    public class SOJSONUtiles : ScriptableObject
+    public class SOJSONUtiles : ScriptableObject//Basic save system with save and load methods.
     {
         string filePath;
-
+        GameData gameData;
 
         private void OnEnable()
         {
             filePath = Application.dataPath + Path.AltDirectorySeparatorChar + "GameData.json";
+            gameData = new GameData(100, 4);
         }
 
         public void SaveGameData(float playerHealth, int playerMoves)
@@ -24,13 +25,17 @@ namespace DarkCloudGame
             writer.Write(jsonGameDataString);
         }
 
-        public void LoadGameData()
+        public GameData LoadGameData()
         {
-            using StreamReader reader = new StreamReader(filePath);
-            string json = reader.ReadToEnd();
+            if (File.Exists(filePath))
+            {
+                using StreamReader reader = new StreamReader(filePath);
+                string json = reader.ReadToEnd();
 
-            GameData gameData = JsonUtility.FromJson<GameData>(json);
+                gameData = JsonUtility.FromJson<GameData>(json);
+            }
 
+            return gameData;
         }
        
     }

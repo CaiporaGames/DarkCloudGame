@@ -4,11 +4,15 @@ using UnityEngine;
 
 namespace DarkCloudGame
 {
-    public class EnemyMovement : MonoBehaviour
+    public class EnemyMovement : MonoBehaviour//COntroles when the enemies can move
     {
         [SerializeField] LayerMask slimeMask;
         [SerializeField] SOLevelParameters levelParameters;
         [SerializeField] SOGameStats gameStats;
+        [SerializeField] SOAudioClips moveClip;
+        [SerializeField] AudioSource audioSource;
+
+
         float perc = 0;
         float time = 0;
         float maxTime = 0.5f;
@@ -42,6 +46,7 @@ namespace DarkCloudGame
                     && transform.position.x + newPosition.x >= levelParameters.grid.GridOriginPosition.x)
                 {
                     transform.Translate(newPosition);
+                    moveClip.PlayAudio(audioSource);
                 }                
             }
         }
@@ -58,7 +63,7 @@ namespace DarkCloudGame
             time = 0;
             perc = 0;
             EnemyMove();
-        }
+        }       
        
     }
 }

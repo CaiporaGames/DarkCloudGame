@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DarkCloudGame
 {
-    public class EnemySpawner : MonoBehaviour
+    public class EnemySpawner : MonoBehaviour// Setup and spawn the enemies
     {
         [SerializeField] GameObject[] enemyPrefab;
         [SerializeField] SOLevelParameters levelParameters;
@@ -30,6 +30,7 @@ namespace DarkCloudGame
 
         }
 
+        //Setup enemies types. It should use Scripatable objects to avoid the if/else nightmare
         void SetupEnemies(int enemyAmount, int enemyIndexOnEnemyPrefabArray)
         {
             int x, y;

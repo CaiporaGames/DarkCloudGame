@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DarkCloudGame
 {
-    public class GridBuilder : MonoBehaviour
+    public class GridBuilder : MonoBehaviour//Responsable for construct the grid. It should be a Scriptable Object as you ask but i just see in the last time.
     {
         [SerializeField] int gridWidth, gridHeight;
         [SerializeField] Vector3 gridOrigin;

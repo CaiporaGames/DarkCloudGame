@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DarkCloudGame
 {
-    public class TileData : MonoBehaviour
+    public class TileData : MonoBehaviour// This is a component of each tile. Holds basic information and setup basic information. 
     {
         [SerializeField] SOPlayerStats playerStats;
         [SerializeField] SOLevelParameters levelParameters;

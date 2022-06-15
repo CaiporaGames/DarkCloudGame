@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DarkCloudGame
 {
-    public class Grid
+    public class Grid//All the methods need to create the grid. OBS.: The values should be inside a scriptable object as you described
     {
         int width;
         int height;

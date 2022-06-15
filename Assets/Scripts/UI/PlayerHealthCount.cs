@@ -5,7 +5,7 @@ using TMPro;
 
 namespace DarkCloudGame
 {
-    public class PlayerHealthCount : MonoBehaviour
+    public class PlayerHealthCount : MonoBehaviour//This is for the player health UI count. It should be called PlayerHealthCountUI
     {
         [SerializeField] SOPlayerStats playerStats;
         [SerializeField] TextMeshProUGUI playerHealthText;

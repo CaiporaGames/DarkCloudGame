@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DarkCloudGame
 {
-    public class SEnemiesHolder : MonoBehaviour
+    public class SEnemiesHolder : MonoBehaviour//Holds the enemies array for future reference
     {
         List<GameObject> enemies = new List<GameObject>();
 
